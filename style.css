@@ -79,3 +79,39 @@ footer {
         flex-direction: column;
     }
 }
+.btn {
+    position: relative;
+    text-decoration: none;
+    padding: 15px 30px;
+    background-color: #d6336c;
+    color: white;
+    border-radius: 25px;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #a52a56;
+}
+
+/* Tooltip */
+.btn::after {
+    content: attr(data-email);
+    position: absolute;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: white;
+    padding: 5px 10px;
+    font-size: 0.9em;
+    border-radius: 5px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+    white-space: nowrap;
+}
+
+.btn:hover::after {
+    opacity: 1;
+}
