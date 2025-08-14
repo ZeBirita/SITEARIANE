@@ -19,7 +19,7 @@ header {
 }
 
 header h1 {
-    font-size: 3em;
+    font-size: 4em;
     color: #d6336c;
 }
 
@@ -37,9 +37,12 @@ section.about img {
     margin-top: 20px;
     border-radius: 15px;
     width: 100%;
-    max-width: 400px;   /* largura máxima */
-    max-height: 600px;  /* altura máxima */
-    object-fit: cover;  /* mantém proporção e corta se necessário */
+    max-width: 400px;
+    /* largura máxima */
+    max-height: 600px;
+    /* altura máxima */
+    object-fit: cover;
+    /* mantém proporção e corta se necessário */
     height: auto;
 }
 
@@ -75,10 +78,12 @@ footer {
     header h1 {
         font-size: 2em;
     }
+
     .buttons {
         flex-direction: column;
     }
 }
+
 .btn {
     position: relative;
     text-decoration: none;
