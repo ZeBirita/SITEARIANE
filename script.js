@@ -1,24 +1,24 @@
-// Rolagem suave para seções
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Swiper
+    const swiper = new Swiper('.swiper-container', {
+        loop: true,
+        autoHeight: true,
+        pagination: { el: '.swiper-pagination', clickable: true },
+        navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+        autoplay: { delay: 5000 },
+        breakpoints: {
+            1024: { slidesPerView: 3, spaceBetween: 20 },
+            768: { slidesPerView: 2, spaceBetween: 15 },
+            480: { slidesPerView: 1, spaceBetween: 10 }
+        }
     });
-});
 
-document.getElementById('copyEmailBtn').addEventListener('click', function (e) {
-    e.preventDefault();
-    const email = this.getAttribute('data-email');
+    // Menu responsivo
+    const menuBtn = document.querySelector('.menuBurguer');
+    const navUl = document.querySelector('nav ul');
 
-    navigator.clipboard.writeText(email).then(() => {
-        const originalText = this.textContent;
-        this.textContent = "Email copiado!";
-        setTimeout(() => {
-            this.textContent = originalText;
-        }, 2000);
-    }).catch(err => {
-        console.error("Erro ao copiar email: ", err);
+    menuBtn.addEventListener('click', () => {
+        navUl.classList.toggle('show');
     });
 });
