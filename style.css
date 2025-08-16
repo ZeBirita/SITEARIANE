@@ -1,290 +1,280 @@
 /* Reset básico para evitar conflitos */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+.container.flex {
+  padding-right: 50px;
+}
+
+/* Fundo fixo */
 .background-fixed {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: url('https://irenecarvalho.com/wp-content/uploads/2024/11/hands2-scaled.jpg') no-repeat center center / cover;
-    z-index: -1;
-    /* Fica por trás de tudo */
-    pointer-events: none;
-    /* Não bloqueia cliques */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: url('https://irenecarvalho.com/wp-content/uploads/2024/11/hands2-scaled.jpg') no-repeat center center / cover;
+  z-index: -1;
+  pointer-events: none; /* Não bloqueia cliques */
 }
 
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.5;
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
 }
 
 /* ----- HEADER ----- */
 header {
-    background: rgba(235, 178, 240, 0.8);
-    color: white;
-    position: fixed;
-    top: 0;
-    left: 0;
-    /* garante que começa no canto esquerdo */
-    width: 100vw;
-    /* usa a largura total da tela */
-    z-index: 1000;
+  background: rgba(235, 178, 240, 0.8);
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 1000;
 }
 
-
 header .container {
-    max-width: 1200px;
-    margin: auto;
-    padding: 15px;
-    display: flex;
-    justify-content: space-between;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .container.flex {
+    flex-direction: column;
     align-items: center;
+    padding-right: 0;
+  }
+  .container.flex ul {
+    margin-top: 15px;
+  }
+  .container.flex ul li {
+    margin: 5px 0;
+  }
 }
 
 header .logo img {
-    max-height: 100px;
+  max-height: 100px;
+  width: auto;
 }
 
 header nav ul {
-    display: flex;
-    gap: 25px;
-    list-style: none;
-    font-size: 25px;
+  display: flex;
+  gap: 25px;
+  list-style: none;
+  font-size: 25px;
 }
 
 header nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 .menuSiga {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    j cursor: pointer;
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
 }
 
 .menuSiga .line {
-    width: 25px;
-    height: 3px;
-    background: white;
+  width: 25px;
+  height: 3px;
+  background: white;
 }
 
 /* ----- SEÇÃO INTRO ----- */
 .init {
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    min-height: 80vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 20px;
-    padding-top: 135px;
-    /* espaço para o header fixo */
-    text-align: center;
-    color: white;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 190px 20px 20px;
+  text-align: center;
+  color: white;
 }
 
 .intro h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
+  font-size: 2.5rem;
+  margin-bottom: 10px;
 }
 
 .intro p {
-    font-size: 2.0rem;
-    margin-bottom: 10px;
+  font-size: 2rem;
+  margin-bottom: 10px;
 }
 
 .intro h4 {
-    font-size: 1.6rem;
-    margin-bottom: 10px;
+  font-size: 2rem;
+  margin-bottom: 10px;
 }
 
 .cta {
-    font-size: 2.0rem;
-    display: inline-block;
-    background: #ff4081;
-    color: white;
-    padding: 12px 25px;
-    border-radius: 25px;
-    text-decoration: none;
-    margin-top: 15px;
+  font-size: 2rem;
+  display: inline-block;
+  background: #ff4081;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 25px;
+  text-decoration: none;
+  margin-top: 15px;
 }
 
 /* ----- SEÇÃO SOBRE ----- */
-#sobre {
-    background: rgba(235, 178, 240, 0.4);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 30px;
-    color: white;
-    padding: 40px 20px;
-    font-size: 25px;
-    width: 100vw;
-    box-sizing: border-box;
-    text-align: center;
+#sobre,
+#sobre-2 {
+  background: rgba(235, 178, 240, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  color: white;
+  padding: 40px 20px;
+  font-size: 25px;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
 }
 
-#sobre img {
-    max-width: 400px;
-    width: 100%;
-    border-radius: 10px;
-    height: auto;
+#sobre img,
+#sobre-2 img {
+  max-width: 400px;
+  width: 100%;
+  border-radius: 10px;
+  height: auto;
 }
 
-#sobre .text {
-    flex: 1 1 300px;
-    max-width: 700px;
-    width: 100%;
+#sobre .text,
+#sobre-2 .text {
+  flex: 1 1 300px;
+  max-width: 700px;
+  width: 100%;
 }
-
-/* Responsivo: empilhar e centralizar tudo em telas menores */
-@media (max-width: 1000px) {
-    #sobre {
-        flex-direction: column;
-        padding: 60px 20px;
-    }
-
-    #sobre img,
-    #sobre .text {
-        width: 90%;
-        margin: 0 auto;
-    }
-
-    #sobre .text {
-        font-size: 1.2rem;
-    }
-}
-
 
 /* ----- SEÇÃO VALORES ----- */
 .imagensValores {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 40px 20px;
-    max-width: 1200px;
-    margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 40px 20px;
+  max-width: 1080px;
+  margin: 0 auto;
 }
 
 .imagem-container img {
-    width: 80%;
-    border-radius: 10px;
+  width: 80%;
+  border-radius: 10px;
 }
 
 .texto {
-    padding: 10px;
-    text-align: center;
+  padding: 10px;
+  text-align: center;
 }
 
 /* ----- SWIPER ----- */
 .swiper-container {
-    padding: 40px 0;
-    max-width: 1200px;
-    margin: auto;
+  padding: 40px 0;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .quote {
-    background: #4447e9;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
+  background: #4447e9;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 /* ----- CONTATO ----- */
 .contact-buttons {
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
-    justify-content: center;
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 #whatsapp {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 60px;
-    /* Tamanho do ícone */
-    height: auto;
-    z-index: 9999;
-    /* Fica acima de tudo */
-    cursor: pointer;
-    transition: transform 0.3s ease;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: auto;
+  z-index: 9999;
+  cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
 #whatsapp:hover {
-    transform: scale(1.4);
-    /* Efeito de zoom ao passar o mouse (opcional) */
+  transform: scale(1.4);
 }
 
 .contact-button {
-    
-    background-color: #f9d6ea;
-    /* rosa claro delicado */
-    color: #6a1b9a;
-    /* lilás escuro para contraste */
-    padding: 12px 24px;
-    border: 2px solid #f3b3d3;
-    border-radius: 30px;
-    text-decoration: none;
-    font-family: 'Segoe UI', 'Arial', sans-serif;
-    font-size: 1rem;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 12px 25px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-size: 20px;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+/* Estilo base para contact-button */
+.contact-button {
+  background-color: #f9d6ea;
+  color: #6a1b9a;
+  border: 2px solid #f3b3d3;
+  font-family: 'Segoe UI', 'Arial', sans-serif;
+  font-weight: 500;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
 }
 
 .contact-button:hover {
-    transform: scale(1.18);
-    background-color: #f3b3d3;
-    /* tom um pouco mais forte */
-    color: #4a0072;
-    /* tom mais escuro no hover */
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  transform: scale(1.18);
+  background-color: #f3b3d3;
+  color: #4a0072;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
 }
+
+/* Estilos específicos para botões de contato no footer */
+#contato .contact-button {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 2px solid white;
+}
+
+#contato .contact-button:hover {
+  transform: scale(1.05);
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: none;
+}
+
+/* Títulos e textos */
 #depoimentos,
 #contato {
-    color: white;                /* Cor do texto */
-    text-align: center;          /* Centraliza horizontalmente */
-    font-size: 25px;             /* Tamanho da letra */
-    padding: 60px 20px;          /* Espaçamento interno */
+  color: white;
+  text-align: center;
+  font-size: 25px;
+  padding: 20px;
 }
 
 #depoimentos h2,
 #contato h2 {
-    font-size: 35px;             /* Um pouco maior para os títulos */
-    margin-bottom: 20px;
+  font-size: 35px;
+  margin-bottom: 10px;
 }
 
 #contato .contact-buttons {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 15px;
-    margin-top: 30px;
-}
-
-.contact-button {
-    background: rgba(255, 255, 255, 0.1);
-    color: white;
-    padding: 12px 25px;
-    border: 2px solid white;
-    border-radius: 25px;
-    text-decoration: none;
-    font-size: 20px;
-    transition: transform 0.3s ease, background 0.3s ease;
-}
-
-.contact-button:hover {
-    transform: scale(1.05);
-    background: rgba(255, 255, 255, 0.2);
+  margin-top: 30px;
 }
